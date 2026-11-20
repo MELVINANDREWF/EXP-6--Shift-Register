@@ -20,6 +20,7 @@ else Q <= {Q[2:0], sin};   // shift left, sin enters at LSB
 Serial output: sout = Q[3]   (the bit about to be shifted out)
 
 ## Design / RTL Program
+~~~
 module shift_reg (
     input  wire       clk,   // clock
     input  wire       rst,   // asynchronous active-high reset
@@ -36,8 +37,10 @@ module shift_reg (
  
     assign sout = Q[3];
 endmodule
+~~~
 
 Testbench Program
+~~~
 module tb6;
     reg  clk, rst, sin;
     wire sout;
@@ -86,6 +89,7 @@ module tb6;
         #20 $finish;
     end
 endmodule
+~~~
 
 
 
